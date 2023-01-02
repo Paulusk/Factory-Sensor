@@ -1,4 +1,4 @@
-// @ts-check
+
 
 export class ArgumentError extends Error {}
 
