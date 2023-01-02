@@ -10,20 +10,14 @@ export class OverheatingError extends Error {
 }
 
 /**
- * Check if the humidity level is not too high.
- *
- * @param {number} humidityPercentage
- * @throws {Error}
- */
+  Check if the humidity level is not too high.
+*/
 export function checkHumidityLevel(humidityPercentage) {
   if (humidityPercentage > 70) throw new Error("too  much humidity!!") 
 }
 
 /**
- * Check if the temperature is not too high.
- *
- * @param {number|null} temperature
- * @throws {ArgumentError|OverheatingError}
+  Check if the temperature is not too high.
  */
 export function reportOverheating(temperature) {
   if(!temperature) throw new ArgumentError("sensor broken")
@@ -31,15 +25,7 @@ export function reportOverheating(temperature) {
 }
 
 /**
- *  Triggers the needed action depending on the result of the machine check.
- *
- * @param {{
- * check: function,
- * alertDeadSensor: function,
- * alertOverheating: function,
- * shutdown: function
- * }} actions
- * @throws {ArgumentError|OverheatingError|Error}
+  Triggers the needed action depending on the result of the machine check.
  */
 export function monitorTheMachine(actions) {
   try {
